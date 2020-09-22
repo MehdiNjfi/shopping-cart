@@ -1,0 +1,35 @@
+.navbar {
+  &-list {
+    height: 4em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-logo {
+      border-left: 5px solid #f1c40f;
+      color: #2c3e50;
+      padding-left: 0.1em;
+      font-weight: 700;
+      font-size: 30px;
+    }
+
+    .nav-cart-logo {
+      padding: 0.5em;
+      border-radius: 0.5em;
+      cursor: pointer;
+      &:hover {
+        background-color: #ecf0f1;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .navbar {
+    &-list {
+      .nav-logo {
+        font-size: 25px;
+      }
+    }
+  }
+}
