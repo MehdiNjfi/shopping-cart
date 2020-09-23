@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { setProducts } from '../../redux/actions/actions'
+import { setProducts, addProduct } from '../../redux/actions/actions'
 import { getVisibleProducts } from '../../redux/reducers/products'
 import ProductList from '../../components/Products/ProductList/ProductList'
 
-const ProductsContainer = ({ products, setProducts }) => {
+const ProductsContainer = ({ products, setProducts, addProduct }) => {
   useEffect(() => {
     fetch(
       'https://jsonblob.com/api/jsonblob/ab70f01d-fc06-11ea-a8f0-e15d461afba2'
@@ -19,7 +19,7 @@ const ProductsContainer = ({ products, setProducts }) => {
 
   return (
     <section className="productsContainer">
-      <ProductList products={products} />
+      <ProductList products={products} addProduct={addProduct} />
     </section>
   )
 }
@@ -28,4 +28,6 @@ const mapStateToProps = (state) => {
   return { products: getVisibleProducts(state.products) }
 }
 
-export default connect(mapStateToProps, { setProducts })(ProductsContainer)
+export default connect(mapStateToProps, { setProducts, addProduct })(
+  ProductsContainer
+)

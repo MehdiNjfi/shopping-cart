@@ -9,7 +9,13 @@ import {
 const products = (state, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-    //
+      // If the product has inventory, reduce it
+      return action.inventory > 0
+        ? {
+            ...state,
+            inventory: state.inventory > 0 ? state.inventory - 1 : 0,
+          }
+        : { ...state }
     case REMOVE_FROM_CART:
     //
     case REMOVE_ALL_FROM_CART:

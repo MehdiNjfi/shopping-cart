@@ -2,7 +2,7 @@ import React from 'react'
 import ProductCard from '../ProductCard/ProductCard'
 import './ProductList.scss'
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, addProduct }) => {
   // Products Comes from productsContainer component
   return (
     <div className="productList">
@@ -19,7 +19,13 @@ const ProductList = ({ products }) => {
 
       <div className="productList-body">
         {products.map((product) => {
-          return <ProductCard key={product.id} product={product} />
+          return (
+            <ProductCard
+              key={product.id}
+              product={product}
+              addProduct={addProduct}
+            />
+          )
         })}
       </div>
     </div>

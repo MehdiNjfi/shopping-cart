@@ -12,7 +12,10 @@ const initialState = {
 const addedIds = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-    //
+      // Add product id to cart
+      let uniqueAddedIds = [...state.addedIds, action.productId]
+      // Unique arrays and remove duplicate cells
+      return [...new Set(uniqueAddedIds)]
     case REMOVE_FROM_CART:
     //
     case REMOVE_ALL_FROM_CART:
@@ -25,7 +28,15 @@ const addedIds = (state = initialState, action) => {
 const quantityById = (state = initialState.quantityById, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-    //
+      // If the product has inventory, add it to the quantity
+      return action.inventory > 0
+        ? {
+            ...state,
+            [action.productId]: state[action.productId]
+              ? state[action.productId] + 1
+              : 1,
+          }
+        : { ...state }
     case REMOVE_FROM_CART:
     //
     case REMOVE_ALL_FROM_CART:
