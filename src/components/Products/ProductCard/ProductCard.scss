@@ -1,0 +1,46 @@
+.card {
+  width: 10em;
+  display: flex;
+  flex-direction: column;
+  margin: 0.7em;
+  font-family: inherit;
+
+  &-img-top {
+    display: flex;
+    margin: 0 auto;
+    height: 10em;
+  }
+
+  &-title {
+    height: 3em;
+  }
+
+  &-price {
+    color: #34495e;
+    margin-bottom: 0.5em;
+  }
+
+  &-button {
+    width: 100%;
+    margin-top: auto;
+    padding: 0.5em;
+    border: 1px solid;
+    border-radius: 0.2em;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #faca0a;
+    color: #ffffff;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f1c40f;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .card {
+    width: 100%;
+  }
+}
