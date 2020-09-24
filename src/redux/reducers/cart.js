@@ -2,11 +2,13 @@ import {
   ADD_TO_CART,
   REMOVE_FROM_CART,
   REMOVE_ALL_FROM_CART,
+  SET_SHOW_CART,
 } from '../constant/actionsTypes'
 
 const initialState = {
   addedIds: [],
   quantityById: {},
+  showCart: false,
 }
 
 const addedIds = (state = initialState, action) => {
@@ -46,12 +48,22 @@ const quantityById = (state = initialState.quantityById, action) => {
   }
 }
 
+const showCart = (state = initialState.showCart, action) => {
+  switch (action.type) {
+    case SET_SHOW_CART:
+      return !state
+    default:
+      return state
+  }
+}
+
 const cart = (state = initialState, action) => {
   switch (action.type) {
     default:
       return {
         addedIds: addedIds(state, action),
         quantityById: quantityById(state.quantityById, action),
+        showCart: showCart(state.showCart, action),
       }
   }
 }
