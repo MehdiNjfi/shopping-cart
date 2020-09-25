@@ -25,7 +25,11 @@ const products = (state, action) => {
           }
         : state
     case REMOVE_ALL_FROM_CART:
-    //
+      // Return product inventory
+      return {
+        ...state,
+        inventory: state.inventory + action.removeCount,
+      }
     default:
       return state
   }

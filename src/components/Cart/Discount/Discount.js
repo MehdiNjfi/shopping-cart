@@ -2,12 +2,8 @@ import React, { useState } from 'react'
 import './Discount.scss'
 
 const Discount = ({ setDiscount }) => {
-  {
-    /* setDiscount action is connected to the Redax Store and want a number like 0.2 or 0.3 */
-  }
-  {
-    /* Error for when the discount code was not entered or entered incorrectly */
-  }
+  // setDiscount action is connected to the Redax Store and want a number like 0.2 or 0.3
+  // Error for when the discount code was not entered or entered incorrectly
   const [error, setError] = useState(null)
 
   const onSubmitDiscount = (event) => {

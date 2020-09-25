@@ -4,6 +4,7 @@ import { getCartProducts, getTotal } from '../../redux/reducers'
 import {
   addProduct,
   removeFromCart,
+  removeAllFromCart,
   setShowCart,
   setDiscount,
 } from '../../redux/actions/actions'
@@ -14,6 +15,7 @@ const CartContainer = ({
   cart,
   addProduct,
   removeFromCart,
+  removeAllFromCart,
   showCart,
   totalPrice,
   setShowCart,
@@ -26,6 +28,7 @@ const CartContainer = ({
           cart={cart}
           addProduct={addProduct}
           removeFromCart={removeFromCart}
+          removeAllFromCart={removeAllFromCart}
           setShowCart={setShowCart}
           totalPrice={totalPrice}
           setDiscount={setDiscount}
@@ -46,6 +49,7 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   addProduct,
   removeFromCart,
+  removeAllFromCart,
   setShowCart,
   setDiscount,
 })(CartContainer)

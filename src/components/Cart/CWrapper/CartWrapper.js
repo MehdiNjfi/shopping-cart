@@ -8,6 +8,7 @@ const CartWrapper = ({
   cart,
   addProduct,
   removeFromCart,
+  removeAllFromCart,
   totalPrice,
   setShowCart,
   setDiscount,
@@ -38,6 +39,7 @@ const CartWrapper = ({
                 productCart={productCart}
                 addProduct={addProduct}
                 removeFromCart={removeFromCart}
+                removeAllFromCart={removeAllFromCart}
                 key={productCart.title}
               />
             )
