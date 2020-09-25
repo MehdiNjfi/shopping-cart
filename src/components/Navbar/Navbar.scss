@@ -13,12 +13,25 @@
       font-size: 30px;
     }
 
-    .nav-cart-logo {
+    .nav-cart-icon {
       padding: 0.5em;
       border-radius: 0.5em;
       cursor: pointer;
+      position: relative;
       &:hover {
         background-color: #ecf0f1;
+      }
+
+      .cart-length {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #e74c3c;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 0 0.3em;
+        border-radius: 50%;
       }
     }
   }
