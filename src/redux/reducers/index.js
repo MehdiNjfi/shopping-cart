@@ -28,10 +28,10 @@ export const getDiscount = (state) =>
     .toFixed(2) * state.cart.discount
 
 export const getTotal = (state) =>
-  getAddedIds(state)
-    .reduce(
+  (
+    getAddedIds(state).reduce(
       (total, id) =>
         total + getProduct(state, id).price * getQuantity(state, id),
       0
-    )
-    .toFixed(2) - getDiscount(state).toFixed(2)
+    ) - getDiscount(state)
+  ).toFixed(2)

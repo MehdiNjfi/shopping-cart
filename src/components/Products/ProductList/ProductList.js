@@ -8,13 +8,6 @@ const ProductList = ({ products, addProduct }) => {
     <div className="productList">
       <div className="productList-header">
         <h1 className="productList-header-title">Products</h1>
-        <label>
-          <input
-            type="text"
-            placeholder="Search in products..."
-            className="productList-header-searchInput"
-          />
-        </label>
       </div>
 
       <div className="productList-body">
