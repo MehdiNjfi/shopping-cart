@@ -4,7 +4,13 @@ import xIcon from '../../../assets/images/icons/x.svg'
 import Discount from '../Discount/Discount.js'
 import './CartWrapper.scss'
 
-const CartWrapper = ({ cart, totalPrice, setShowCart, setDiscount }) => {
+const CartWrapper = ({
+  cart,
+  addProduct,
+  totalPrice,
+  setShowCart,
+  setDiscount,
+}) => {
   return (
     <div className="cart">
       <div className="cart-header">
@@ -26,7 +32,13 @@ const CartWrapper = ({ cart, totalPrice, setShowCart, setDiscount }) => {
           <div className="cart-empty">Cart is empty!</div>
         ) : (
           cart.map((productCart) => {
-            return <Product productCart={productCart} key={productCart.title} />
+            return (
+              <Product
+                productCart={productCart}
+                addProduct={addProduct}
+                key={productCart.title}
+              />
+            )
           })
         )}
       </div>

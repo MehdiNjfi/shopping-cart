@@ -9,17 +9,24 @@
     align-items: center;
     height: 100%;
 
-    &-x {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #ecf0f1;
-      height: 1.8em;
-      border-radius: 0.2em;
-      cursor: pointer;
+    &-button {
+      width: max-content;
+      background: transparent;
+      border: none;
+      outline: none;
 
-      &:hover {
-        background-color: #bdc3c7;
+      &-x {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ecf0f1;
+        height: 1.8em;
+        border-radius: 0.2em;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #bdc3c7;
+        }
       }
     }
 
@@ -41,14 +48,21 @@
     justify-content: space-evenly;
     align-items: center;
 
-    img {
-      background-color: #ecf0f1;
-      height: 1.8em;
-      border-radius: 0.2em;
-      cursor: pointer;
+    &-button {
+      width: max-content;
+      background: transparent;
+      border: none;
+      outline: none;
 
-      &:hover {
-        background-color: #bdc3c7;
+      img {
+        background-color: #ecf0f1;
+        height: 1.8em;
+        border-radius: 0.2em;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #bdc3c7;
+        }
       }
     }
   }
@@ -92,7 +106,7 @@
     grid-template-columns: 10% 50% 15% 25%;
 
     &-images {
-      &-x {
+      &-button-x {
         width: 1.5em;
       }
 
