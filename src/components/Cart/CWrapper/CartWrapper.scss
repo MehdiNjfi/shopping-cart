@@ -1,0 +1,25 @@
+.cart {
+  padding: 1em 0;
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-icon {
+      border: 1px solid #2c3e50;
+      border-radius: 0.2em;
+      cursor: pointer;
+
+      &:hover {
+        background: #ecf0f1;
+      }
+    }
+  }
+
+  &-empty {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    color: #e74c3c;
+  }
+}
