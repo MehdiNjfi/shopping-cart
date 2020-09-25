@@ -21,7 +21,10 @@ const addedIds = (state = initialState, action) => {
       // Unique arrays and remove duplicate cells
       return [...new Set(uniqueAddedIds)]
     case REMOVE_FROM_CART:
-    //
+      // If there is quantity, do nothing. If it is zero, delete it
+      return action.quantity > 0
+        ? [...state.addedIds]
+        : state.addedIds.filter((id) => id !== action.productId)
     case REMOVE_ALL_FROM_CART:
     //
     default:
@@ -42,7 +45,13 @@ const quantityById = (state = initialState.quantityById, action) => {
           }
         : { ...state }
     case REMOVE_FROM_CART:
-    //
+      // If there is quantity, reduce the quantity, otherwise do nothing
+      return action.quantity > 0
+        ? {
+            ...state,
+            [action.productId]: --state[action.productId],
+          }
+        : state
     case REMOVE_ALL_FROM_CART:
     //
     default:

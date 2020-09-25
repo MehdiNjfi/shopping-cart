@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { getCartProducts, getTotal } from '../../redux/reducers'
 import {
   addProduct,
+  removeFromCart,
   setShowCart,
   setDiscount,
 } from '../../redux/actions/actions'
@@ -12,6 +13,7 @@ import CartWrapper from '../../components/Cart/CWrapper/CartWrapper.js'
 const CartContainer = ({
   cart,
   addProduct,
+  removeFromCart,
   showCart,
   totalPrice,
   setShowCart,
@@ -23,6 +25,7 @@ const CartContainer = ({
         <CartWrapper
           cart={cart}
           addProduct={addProduct}
+          removeFromCart={removeFromCart}
           setShowCart={setShowCart}
           totalPrice={totalPrice}
           setDiscount={setDiscount}
@@ -42,6 +45,7 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
   addProduct,
+  removeFromCart,
   setShowCart,
   setDiscount,
 })(CartContainer)

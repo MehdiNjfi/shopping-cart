@@ -7,6 +7,7 @@ import './CartWrapper.scss'
 const CartWrapper = ({
   cart,
   addProduct,
+  removeFromCart,
   totalPrice,
   setShowCart,
   setDiscount,
@@ -36,6 +37,7 @@ const CartWrapper = ({
               <Product
                 productCart={productCart}
                 addProduct={addProduct}
+                removeFromCart={removeFromCart}
                 key={productCart.title}
               />
             )

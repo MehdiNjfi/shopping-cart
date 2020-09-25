@@ -4,7 +4,7 @@ import plusIcon from '../../../assets/images/icons/plus.svg'
 import minusIcon from '../../../assets/images/icons/minus.svg'
 import './Product.scss'
 
-const Product = ({ productCart, addProduct }) => {
+const Product = ({ productCart, addProduct, removeFromCart }) => {
   // productCart comes from CartWrapper component
   return (
     <div className="product-cart">
@@ -31,7 +31,10 @@ const Product = ({ productCart, addProduct }) => {
 
       {/* product quantity and Increase or decrease the quantity of products*/}
       <div className="product-cart-quantity">
-        <button className="product-cart-quantity-button">
+        <button
+          className="product-cart-quantity-button"
+          onClick={() => removeFromCart(productCart.id, productCart.quantity)}
+        >
           <img src={minusIcon} alt="-" />
         </button>
         <span>{productCart.quantity}</span>

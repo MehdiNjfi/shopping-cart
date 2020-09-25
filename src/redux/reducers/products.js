@@ -15,9 +15,15 @@ const products = (state, action) => {
             ...state,
             inventory: state.inventory > 0 ? state.inventory - 1 : 0,
           }
-        : { ...state }
+        : state
     case REMOVE_FROM_CART:
-    //
+      // If there is quantity, add to inventory otherwise do nothing
+      return action.quantity > 0
+        ? {
+            ...state,
+            inventory: state.inventory + 1,
+          }
+        : state
     case REMOVE_ALL_FROM_CART:
     //
     default:

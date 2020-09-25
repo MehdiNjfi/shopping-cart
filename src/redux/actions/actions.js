@@ -3,6 +3,7 @@ import {
   ADD_TO_CART,
   SET_SHOW_CART,
   SET_DISCOUNT,
+  REMOVE_FROM_CART,
 } from '../constant/actionsTypes'
 
 export const setProducts = (products) => ({
@@ -23,4 +24,10 @@ export const setShowCart = () => ({
 export const setDiscount = (discount) => ({
   type: SET_DISCOUNT,
   discount,
+})
+
+export const removeFromCart = (productId, quantity) => ({
+  type: REMOVE_FROM_CART,
+  productId,
+  quantity,
 })
