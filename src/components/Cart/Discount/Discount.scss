@@ -1,0 +1,36 @@
+.discount {
+  &-form {
+    &-input {
+      font-family: inherit;
+      border: 1px solid #95a5a6;
+      border-radius: 0.2em;
+      width: 11em;
+      padding: 0.5em;
+      margin-right: 0.2em;
+
+      // When discount has error
+      &-error {
+        border: 1px solid #e74c3c;
+      }
+    }
+    &-button {
+      font-family: inherit;
+      background-color: #ff3f6c;
+      color: #ffffff;
+      border: 1px solid #ff3f6c;
+      border-radius: 0.2em;
+      padding: 0.5em;
+      cursor: pointer;
+    }
+  }
+
+  // Style for error message
+  &-error {
+    font-weight: 700;
+    color: #e74c3c;
+  }
+
+  &-info {
+    margin: 1em 0;
+  }
+}

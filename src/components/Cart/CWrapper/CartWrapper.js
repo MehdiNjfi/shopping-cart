@@ -1,9 +1,10 @@
 import React from 'react'
 import Product from '../Product/Product.js'
 import xIcon from '../../../assets/images/icons/x.svg'
+import Discount from '../Discount/Discount.js'
 import './CartWrapper.scss'
 
-const Cart = ({ cart, setShowCart }) => {
+const CartWrapper = ({ cart, totalPrice, setShowCart, setDiscount }) => {
   return (
     <div className="cart">
       <div className="cart-header">
@@ -29,8 +30,19 @@ const Cart = ({ cart, setShowCart }) => {
           })
         )}
       </div>
+
+      {/* Show discount and Total price  */}
+      {cart.length !== 0 ? (
+        <div className="cart-footer">
+          {/* setDiscount want discount like 0.2 or 0.3 */}
+          <Discount setDiscount={setDiscount} />
+          <div className="total-price">
+            <b>Total price: {totalPrice}</b>
+          </div>
+        </div>
+      ) : null}
     </div>
   )
 }
 
-export default Cart
+export default CartWrapper

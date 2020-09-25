@@ -3,12 +3,14 @@ import {
   REMOVE_FROM_CART,
   REMOVE_ALL_FROM_CART,
   SET_SHOW_CART,
+  SET_DISCOUNT,
 } from '../constant/actionsTypes'
 
 const initialState = {
   addedIds: [],
   quantityById: {},
   showCart: false,
+  discount: 0,
 }
 
 const addedIds = (state = initialState, action) => {
@@ -57,6 +59,15 @@ const showCart = (state = initialState.showCart, action) => {
   }
 }
 
+const discount = (state = initialState.discount, action) => {
+  switch (action.type) {
+    case SET_DISCOUNT:
+      return action.discount
+    default:
+      return state
+  }
+}
+
 const cart = (state = initialState, action) => {
   switch (action.type) {
     default:
@@ -64,6 +75,7 @@ const cart = (state = initialState, action) => {
         addedIds: addedIds(state, action),
         quantityById: quantityById(state.quantityById, action),
         showCart: showCart(state.showCart, action),
+        discount: discount(state.discount, action),
       }
   }
 }
