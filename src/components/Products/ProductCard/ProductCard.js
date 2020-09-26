@@ -5,10 +5,12 @@ const ProductCard = ({ product, addProduct }) => {
   // Product Comes from productsList component
   return (
     <div className="card">
-      <img src={product.image} alt={product.titles} className="card-img-top" />
+      <img src={product.image} alt={product.title} className="card-img-top" />
       <div className="card-body">
-        <h4 className="card-title">{product.title}</h4>
-        <h5 className="card-price">${product.price}</h5>
+        <h4>
+          <h4 className="card-title">{product.title}</h4>
+          <h5 className="card-price">${product.price}</h5>
+        </h4>
         <button
           type="button"
           className="card-button"
